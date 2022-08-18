@@ -23,10 +23,11 @@ namespace TDDApplication
         {
             try
             {
-                var NUM1 = int.TryParse(textBoxNum1.Text, out int Num1);
-                var NUM2 = int.TryParse(textBoxNum2.Text, out int Num2);
-                var total = Addition(Num1, Num2);
-                textBoxTotal.Text = total.ToString();
+                var Num1 = Int32.Parse(textBoxNum1.Text);
+                var Num2 = Int32.Parse(textBoxNum2.Text);
+                textBoxTotal.Text = (Addition(Num1, Num2)).ToString();
+
+               
             }
             catch (Exception)
             {
@@ -35,6 +36,8 @@ namespace TDDApplication
             }
             
         }
+
+
         public int Addition(int Num1, int Num2)
         {
             var total = Num1 + Num2;

@@ -7,20 +7,23 @@ namespace TestProject
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void BasicAddictionTest()
+        [TestMethod]        
+        [DataRow("50", "70","120")]
+        [DataRow("510", "90", "600")]
+        [DataRow("800", "320", "1120")]
+
+
+        public void BasicAddictionTest(string x, string y, string expected)
         {
 
             var calculator = new Calculator();
-            int total = calculator.Addition(100, 20);
-            Assert.AreEqual(120, total);
-        }
-        //public void BasicSubstractionTest()
-        //{
+            int num1 = Int32.Parse(x);
+            int num2 = Int32.Parse(y);
+            int expectedRes = int.Parse(expected);
 
-        //    var calculator = new Calculator();
-        //    int total = calculator.Substraction(100, 20);
-        //    Assert.AreEqual(80, total);
-        //}
+            var total = calculator.Addition(num1, num2);
+            Assert.AreEqual(expectedRes, total);
+        }
+        
     }
 }
